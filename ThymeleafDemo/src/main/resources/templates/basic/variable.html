@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Spring EL</h1>
+	<hr/>
+	
+	<ul>
+		<li>[[${user.getUserName()}]]</li>
+		<li>[[${user.userName}]]</li>
+		<li>[[${user['userName']}]]</li>
+	</ul>
+	
+	<hr/>
+	
+	<h3>List</h3>
+	<ul>
+		<li>[[${users[0].getUserName()}]]</li>
+		<li>[[${users[1].getAge()}]]</li>
+		<li>[[${users[0].age}]]</li>
+		<li>[[${users[1].userName}]]</li>
+		<li>[[${users[0]['age']}]]</li>
+		<li>[[${users[1]['userName']}]]</li>
+	</ul>
+	
+	<hr/>
+	
+	<h3>Map</h3>
+	<ul>
+		<li>[[${userMap['userA'].getAge()}]]</li>
+		<li>[[${userMap['userB'].getUserName()}]]</li>
+		<li>[[${userMap['userA'].userName}]]</li>
+		<li>[[${userMap['userB'].age}]]</li>
+		<li>[[${userMap['userA']['age']}]]</li>
+		<li>[[${userMap['userB']['userName']}]]</li>
+	</ul>
+	
+	<div th:with="item=${users[0]}">
+		<ul>
+			<li>이름 : <span th:text="${item.userName}"></span></li>
+			<li>나이 : [[${item.age}]]</li>
+		</ul>
+	</div>
+</body>
+</html>

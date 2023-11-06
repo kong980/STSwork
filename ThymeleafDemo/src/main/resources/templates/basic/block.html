@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>블럭 처리</h1>
+	<th:block th:each="user : ${users}">
+		<div>
+			사용자 이름 : [[${user.userName}]]<br>
+			사용자 나이 : [[${user.age}]]<br>
+		</div>
+
+		<div>
+			요약 : [[${user.userName}]] / [[${user.age}]]
+		</div>
+	</th:block>
+</body>
+
+</html>

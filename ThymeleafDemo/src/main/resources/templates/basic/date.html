@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>LocalDateTime</h1>
+	<hr />
+	default : [[${localDateTime}]]<br>
+	<hr />
+	[[${#temporals.format(localDateTime,"yyyy-MM-dd HH:mm:ss")}]] <br>
+	[[${#temporals.format(localDateTime,"yyyy-MM-dd a HH:mm:ss")}]] <br>
+
+	[[${#temporals.day(localDateTime)}]]<br>
+	[[${#temporals.month(localDateTime)}]]<br>
+	[[${#temporals.monthName(localDateTime)}]]<br>
+	[[${#temporals.monthNameShort(localDateTime)}]]<br>
+	[[${#temporals.year(localDateTime)}]]<br>
+	[[${#temporals.dayOfWeek(localDateTime)}]]<br>
+	[[${#temporals.dayOfWeekName(localDateTime)}]]<br>
+	[[${#temporals.dayOfWeekNameShort(localDateTime)}]]<br>
+	[[${#temporals.hour(localDateTime)}]]<br>
+	[[${#temporals.minute(localDateTime)}]]<br>
+	[[${#temporals.second(localDateTime)}]]<br>
+	[[${#temporals.nanosecond(localDateTime)}]]<br>
+</body>
+
+</html>

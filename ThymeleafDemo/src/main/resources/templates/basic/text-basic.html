@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>컨텐츠 데이터 출력하기</h1>
+	
+	<hr/>
+	
+	<h1>Escape 처리 : "th:text"</h1>
+	<ul>
+		<!-- 지금 쓰는 ${}는 spring에서 쓰는 el -->
+		<li><span th:text="${data}"></span></li>
+		<li>[[${data}]]</li>
+	</ul>
+	
+	<hr/>
+	
+	<h1>Unescape 처리 : "th:utext"</h1>
+	<ul>
+		<li><span th:utext="${data2}"></span></li>
+		<li>[(${data2})]</li>
+	</ul>
+	
+	<hr/>
+	
+	<h1>th:inline="none" --> 이 안에 쓰는 모든 글은 thymeleaf로 해석하지 말고 그냥 Text로 해석해라!!</h1>
+	<span th:inline="none">[[...]] 과 [(...)]</span>
+</body>
+</html>

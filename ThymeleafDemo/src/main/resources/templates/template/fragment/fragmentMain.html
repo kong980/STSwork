@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>부분 포함</h1>
+	<hr>
+	
+	<h2>Insert 방식 포함 : 기존에 있는 것에 "div"로 끼워넣기</h2>
+	<!-- <div th:insert="~{template/fragment/footer :: copy}"> --> <!-- ~ : templates경로 -->
+	<div th:insert="template/fragment/footer :: copy">
+		
+	</div>
+
+	<h2>Replace 방식 포함 : "div"로 끼워넣지 않고 footer만 가져오기</h2>
+	<div th:replace="~{template/fragment/footer :: copy}"> </div><!-- ~ : templates경로 -->
+
+	<h2>파라미터 사용</h2>
+	<div th:replace="~{template/fragment/footer :: copyParam('hello', world)}"> </div><!-- ~ : templates경로 -->
+</body>
+
+</html>

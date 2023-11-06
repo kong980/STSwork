@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>반복문</h1>
+	<hr/>
+
+	<table border="1">
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>나이</th>
+		</tr>
+		<tr th:each="user, uState : ${users}" th:object="${user}">
+			<td th:text="${uState.count}"></td> <!--목록 번호 -->
+			<td th:text="*{userName}">데이터 없음</td> <!-- 태그 밖에 있는 값들은 default 값 : 만약 user.userName에 값이 없으면 출력 -->
+			<td th:text="*{age}">0</td> <!-- 태그 밖에 있는 값들은 default 값 : 만약 user.userName에 값이 없으면 출력 -->
+		</tr>
+	</table>
+	
+	<hr>
+	<table border="1">
+		<tr>
+			<th>이름</th>
+			<th>나이</th>
+			<th>정보</th>
+		</tr>
+		<tr th:each="user : ${users}">
+			<td th:text="*{user.userName}">데이터 없음</td> <!-- 태그 밖에 있는 값들은 default 값 : 만약 user.userName에 값이 없으면 출력 -->
+			<td th:text="*{user.age}">0</td> <!-- 태그 밖에 있는 값들은 default 값 : 만약 user.userName에 값이 없으면 출력 -->
+			<td>
+				index = [[${userStat.index}]] <!-- 인덱스 값 -->
+				count = [[${userStat.count}]] <!-- 목록 번호 -->
+				size = [[${userStat.size}]] <!-- 리스트의 사이즈 -->
+				even? = [[${userStat.even}]] <!-- 짝수인지 여부 (count 기준) -->
+				first? = [[${userStat.first}]] <!-- 첫번째 값인지 여부 (count 기준) -->
+				last? = [[${userStat.last}]] <!-- 마지막 값인지 여부 (count 기준) -->
+				current = [[${userStat.current}]] <!-- 현재 값 -->
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>

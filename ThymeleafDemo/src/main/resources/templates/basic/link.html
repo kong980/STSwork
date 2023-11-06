@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<html>
+
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<h1>URL 링크</h1>
+	<hr />
+	<a th:href="@{/hello}">basic url</a><br>
+	<a th:href="@{/hello(param1=${param1}, param2=${param2})}">hello query param</a><br>
+	<a th:href="@{/hello/{param1}/{param2}(param1=${param1}, param2=${param2})}">path variable</a><br>
+	<a th:href="@{/hello/{param1}(param1=${param1}, param2=${param2})}">path variable + query parameter</a>
+</body>
+</html>
