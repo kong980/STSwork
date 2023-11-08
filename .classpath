@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="bootapp1/src/main/java"/>
+	<classpathentry kind="src" path="bootapp1/src/test/java"/>
+	<classpathentry kind="src" path="CrawlingDemo/src/main/java"/>
+	<classpathentry kind="src" path="CrawlingDemo/src/test/java"/>
+	<classpathentry kind="src" path="hello1/src/main/java"/>
+	<classpathentry kind="src" path="hello1/src/test/java"/>
+	<classpathentry kind="src" path="hello2/src/main/java"/>
+	<classpathentry kind="src" path="hello2/src/test/java"/>
+	<classpathentry kind="src" path="ThymeleafDemo/src/main/java"/>
+	<classpathentry kind="src" path="ThymeleafDemo/src/test/java"/>
+	<classpathentry kind="src" path="thymeleafe_crud/src/main/java"/>
+	<classpathentry kind="src" path="thymeleafe_crud/src/test/java"/>
+	<classpathentry kind="lib" path="bootapp1/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="CrawlingDemo/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="hello1/.mvn/wrapper/maven-wrapper.jar"/>
+	<classpathentry kind="lib" path="hello2/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="ThymeleafDemo/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="thymeleafe_crud/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="CrawlingDemo/bin"/>
+</classpath>
