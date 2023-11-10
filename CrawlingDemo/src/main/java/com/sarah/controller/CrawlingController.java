@@ -25,13 +25,12 @@ public class CrawlingController {
 	public String getHeaderPage() {
 		return "basic/header";
 	}
-	
+
 	@GetMapping("/job")
 	public String list(Model model) {
 		// 얘는 그냥 DB에 있는 데이터만 조회해서 오는거야
 		ArrayList<CrawlingData> list = (ArrayList<CrawlingData>)dao.getDataAll();
 		model.addAttribute("jobs", list);
-		System.out.println(list);
 		return "basic/job";
 	}
 	

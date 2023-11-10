@@ -14,8 +14,7 @@ public interface DataMappingInterface {
 	@Select("select * from job")
 	List<CrawlingData> selectAll();
 	
-	@Insert("insert into job(companyName, title, condition, upToDate)"
-			+ "values(#{companyName}, #{title}, #{condition}, #{upToDate})")
+	@Insert("insert into job(companyName, title, condition, upToDate) values(#{companyName}, #{title}, #{condition}, #{upToDate})")
 	int insertData(CrawlingData data);
 
 }

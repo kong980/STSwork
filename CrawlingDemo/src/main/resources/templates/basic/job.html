@@ -141,12 +141,12 @@
 			<!--채용 공고 리스트 : jsp 이용해서 목록 리스트로 가져옴-->
 			<div class="job-list">
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(주)진솔</a></div>
-						<div class="list-group-title"><a href="#">진솔 컴퍼니 백엔드 개발자 채용</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
+					<li class="list-group-item list-group-li" th:each="list : ${jobs}">
+						<div class="list-group-company"><a th:href="${list.siteUrl}" th:text="${list.companyName}"></a></div>
+						<div class="list-group-title"><a th:href="${list.siteUrl}" th:text="${list.title}">진솔 컴퍼니 백엔드 개발자 채용</a></div>
+						<div class="list-group-conditions"><a th:href="${list.siteUrl}" th:text="${list.condition}">지역 / 경력 / 학력</a></div>
 					</li>
-					<li class="list-group-item list-group-li">
+					<!-- <li class="list-group-item list-group-li">
 						<div class="list-group-company"><a href="#">(조)교수</a></div>
 						<div class="list-group-title"><a href="#">백터백터조백터 퍼블리셔 정규직 채용</a></div>
 						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
@@ -197,7 +197,7 @@
 						<div class="list-group-company"><a href="#">(주)진솔</a></div>
 						<div class="list-group-title"><a href="#">진솔 컴퍼니 백엔드 개발자 채용</a></div>
 						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 			<div id="pagination">
