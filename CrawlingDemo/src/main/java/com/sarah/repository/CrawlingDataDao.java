@@ -13,19 +13,18 @@ public class CrawlingDataDao {
 	@Autowired
 	private DataMappingInterface dataInterface;
 	
-	
 	public List<CrawlingData> getDataAll(){
 		List<CrawlingData> list = dataInterface.selectAll();
 		return list;
 	}
 	
-	public boolean insertData(CrawlingData data) {
+	public int insertData(String companyName, String title, String condition, String upToDate, String siteUrl, CrawlingData data) {
+		data.getTitle();
+		data.getCondition();
+		data.getUpToDate();
+		data.getSiteUrl();
 		int result = dataInterface.insertData(data);
-		if(result > 0) {
-			return true;
-		}else {
-			return false;
-		}
+		return result;
 	}
 	
 //	public List<CrawlingData> insertData(CrawlingData cd){

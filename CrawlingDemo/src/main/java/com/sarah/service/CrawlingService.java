@@ -5,15 +5,20 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sarah.domain.CrawlingData;
-import com.sarah.repository.DataMappingInterface;
+import com.sarah.repository.CrawlingDataDao;
 
 @Service
 public class CrawlingService {
-	private CrawlingData crawlingData;
-	private DataMappingInterface dataMappingInterface;
+	@Autowired
+	private CrawlingDataDao dao;
+	
+	@Autowired
+	private CrawlingData dt;
+
 // 실시간 크롤링이 구조적으로 불가능한 이유
 // 1. 너네는 로컬서버에서 작업하는거지 실제 서버가 아니기에 실시간 처리가 불가능해
 // 1-1. 애초에 크롤링을 예를들어 5분단위로 돌려야하는건데 로컬에서 그게 불가능하지 - why? 컴퓨터 계속 켜둘거야 ? 24시간 내내 ? 그걸 지금 정상적인
@@ -36,8 +41,10 @@ public class CrawlingService {
 //	5. 해당 데이터를 채용 정보 페이지에 뿌려줌
 
 //	public static void main(String[] args) {
+	
 	public int getData() {
-		for (int i = 1; i < 6; i++) {
+
+		for (int i = 1; i < 2; i++) {
 			// 인크루트 주소 가져오기
 			// 크롤링을 해서 DB에 넣기만 하면돼
 			String url = "https://job.incruit.com/jobdb_list/searchjob.asp?occ1=150&page=" + i;
@@ -68,21 +75,31 @@ public class CrawlingService {
 
 					// 열심히 뽑은 String 데이터들을 DB에 insert 해야돼
 					
+					dt.setCompanyName(companyName);
+					dt.setTitle(title);
+					dt.setCondition(condition);
+					dt.setUpToDate(upToDate);
+					dt.setSiteUrl(siteUrl);
+					
+					dao.insertData(companyName, title, condition, upToDate, siteUrl, dt);
 					
 					
-					System.out.print(companyName + " : "); // 회사명 텍스트만 뽑기
-					System.out.println(title); // 채용공고 텍스트만 뽑기
-					System.out.println(condition); // 조건만 뽑기
-					System.out.println(upToDate); // 마감 날짜만 뽑기
-					System.out.println(siteUrl);
-
-					System.out.println();
+//					System.out.print(companyName + " : "); // 회사명 텍스트만 뽑기
+//					System.out.println(title); // 채용공고 텍스트만 뽑기
+//					System.out.println(condition); // 조건만 뽑기
+//					System.out.println(upToDate); // 마감 날짜만 뽑기
+//					System.out.println(siteUrl);
+//
+//					System.out.println();
 //					CrawlingData cd = new CrawlingData();
 //					cd.getCompanyName();
 //					Set<CrawlingData> dataList = new HashSet<CrawlingData>();
 //					dataList.add(new CrawlingData());
 //					List<CrawlingData> cd;
 //					cd.add(compnayName);
+					
+					
+					
 				
 				}
 
