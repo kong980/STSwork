@@ -15,7 +15,7 @@ public interface DataMappingInterface {
 	@Select("select * from job")
 	List<CrawlingData> selectAll();
 	
-	@Insert("insert into job(companyName, title, condition, upToDate, siteUrl) values(#{companyName, jdbcType=VARCHAR}, #{title, jdbcType=VARCHAR}, #{condition, jdbcType=VARCHAR}, #{upToDate, jdbcType=VARCHAR}, #{siteUrl, jdbcType=VARCHAR})")
+	@Insert("insert into job(companyName, title, carrer, background, loc, upToDate, siteUrl) values(#{companyName, jdbcType=VARCHAR}, #{title, jdbcType=VARCHAR}, #{carrer, jdbcType=VARCHAR}, #{background, jdbcType=VARCHAR}, #{loc, jdbcType=VARCHAR}, #{upToDate, jdbcType=VARCHAR}, #{siteUrl, jdbcType=VARCHAR})")
 	int insertData(CrawlingData data);
 	
 //	@Insert("insert into job(companyName, title) values(#{companyName}, #{title}, #{condition}, #{upToDate}, #{siteUrl})")

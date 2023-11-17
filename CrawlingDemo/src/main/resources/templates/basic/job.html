@@ -73,60 +73,64 @@
 													<li class="dropdown-item"><input type="checkbox"
 															id="over-five"><label for="over-five">석사
 															이상</label></li>
+													<li class="dropdown-item"><input type="checkbox"
+															id="over-five"><label for="over-five">학력 무관
+														</label></li>
+												</ul>
+											</div>
+										</li>
+
+										<li class="nav-item">
+											<div class="btn-group">
+												<button class="btn dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													경력
+												</button>
+												<ul class="dropdown-menu">
+													<li class="dropdown-item"><input type="checkbox"
+															id="under-two"><label for="under-two">신입</label></li>
+													<li class="dropdown-item"><input type="checkbox"
+															id="two-to-five"><label for="two-to-five">3년 이하</label></li>
+													<li class="dropdown-item"><input type="checkbox"
+															id="over-five"><label for="over-five">3년 이상</label></li>
+												</ul>
+											</div>
+										</li>
+										<li class="nav-item">
+											<div class="btn-group">
+												<button class="btn dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													지역
+												</button>
+												<ul class="dropdown-menu">
+													<li class="dropdown-item"><input type="checkbox"
+															id="under-two"><label for="under-two">서울</label></li>
+													<li class="dropdown-item"><input type="checkbox"
+															id="two-to-five"><label for="two-to-five">경기</label></li>
+													<li class="dropdown-item"><input type="checkbox"
+															id="over-five"><label for="over-five">인천</label></li>
+												</ul>
+											</div>
+										</li>
+										<li class="nav-item">
+											<div class="btn-group">
+												<button class="btn dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													채용 날짜
+												</button>
+												<ul class="dropdown-menu">
+													<li class="dropdown-item"><input type="checkbox"
+															id="two-to-five"><label for="two-to-five">공고 등록일순</label>
+													</li>
+													<li class="dropdown-item"><input type="checkbox" id="new"><label
+															for="new">공고 시작일순</label>
+													</li>
+													<li class="dropdown-item"><input type="checkbox"
+															id="under-two"><label for="under-two">공고 마감일순</label></li>
 												</ul>
 											</div>
 										</li>
 									</ul>
-									<li class="nav-item">
-										<div class="btn-group">
-											<button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-												aria-expanded="false">
-												경력
-											</button>
-											<ul class="dropdown-menu">
-												<li class="dropdown-item"><input type="checkbox" id="under-two"><label
-														for="under-two">신입</label></li>
-												<li class="dropdown-item"><input type="checkbox" id="two-to-five"><label
-														for="two-to-five">3년 이하</label></li>
-												<li class="dropdown-item"><input type="checkbox" id="over-five"><label
-														for="over-five">3년 이상</label></li>
-											</ul>
-										</div>
-									</li>
-									<li class="nav-item">
-										<div class="btn-group">
-											<button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-												aria-expanded="false">
-												지역
-											</button>
-											<ul class="dropdown-menu">
-												<li class="dropdown-item"><input type="checkbox" id="under-two"><label
-														for="under-two">서울</label></li>
-												<li class="dropdown-item"><input type="checkbox" id="two-to-five"><label
-														for="two-to-five">경기</label></li>
-												<li class="dropdown-item"><input type="checkbox" id="over-five"><label
-														for="over-five">인천</label></li>
-											</ul>
-										</div>
-									</li>
-									<li class="nav-item">
-										<div class="btn-group">
-											<button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-												aria-expanded="false">
-												채용 날짜
-											</button>
-											<ul class="dropdown-menu">
-												<li class="dropdown-item"><input type="checkbox" id="two-to-five"><label
-														for="two-to-five">공고 등록일순</label>
-												</li>
-												<li class="dropdown-item"><input type="checkbox" id="new"><label
-														for="new">공고 시작일순</label>
-												</li>
-												<li class="dropdown-item"><input type="checkbox" id="under-two"><label
-														for="under-two">공고 마감일순</label></li>
-											</ul>
-										</div>
-									</li>
 								</div>
 								<form class="d-flex" role="search">
 									<input class="form-control me-2" type="search" placeholder="Search"
@@ -142,62 +146,16 @@
 			<div class="job-list">
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item list-group-li" th:each="list : ${jobs}">
-						<div class="list-group-company"><a th:href="${list.siteUrl}" th:text="${list.companyName}"></a></div>
-						<div class="list-group-title"><a th:href="${list.siteUrl}" th:text="${list.title}">진솔 컴퍼니 백엔드 개발자 채용</a></div>
-						<div class="list-group-conditions"><a th:href="${list.siteUrl}" th:text="${list.condition}">지역 / 경력 / 학력</a></div>
+						<div class="list-group-company"><a th:href="${list.siteUrl}" th:text="${list.companyName}"></a>
+						</div>
+						<div class="list-group-title"><a th:href="${list.siteUrl}" th:text="${list.title}"></a></div>
+						<div class="list-group-conditions"><a th:href="${list.siteUrl}" th:text="${list.carrer}"></a>
+							<a th:href="${list.siteUrl}" th:text="${list.background}"></a>
+							<a th:href="${list.siteUrl}" th:text="${list.loc}"></a>
+						</div>
+						<div class="list-group-upToDate"><a th:href="${list.siteUrl}" th:text="${list.upToDate}"></a>
+						</div>
 					</li>
-					<!-- <li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(조)교수</a></div>
-						<div class="list-group-title"><a href="#">백터백터조백터 퍼블리셔 정규직 채용</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
-
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(유)라미</a></div>
-						<div class="list-group-title"><a href="#">보드보드뉴보드 프론트엔드 개발자 채용</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
-
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(금)현쪽</a></div>
-						<div class="list-group-title"><a href="#">그런데 커밋은 어떻게 하는 건가요?</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
-
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(주)경륜</a></div>
-						<div class="list-group-title"><a href="#">믿고 보는 발표 체험단 모집</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(주)진우</a></div>
-						<div class="list-group-title"><a href="#">SOL 아니고 WOO 직원 공개 채용</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
-
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(주)예스리</a></div>
-						<div class="list-group-title"><a href="#">컴퓨터 재부팅 전문가 모집합니다.</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
-
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(주)성길</a></div>
-						<div class="list-group-title"><a href="#">다양한 의견 적극 반영 가족같은 개발팀 모집</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
-
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(주)사라</a></div>
-						<div class="list-group-title"><a href="#">알겠습니다!</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li>
-
-					<li class="list-group-item list-group-li">
-						<div class="list-group-company"><a href="#">(주)진솔</a></div>
-						<div class="list-group-title"><a href="#">진솔 컴퍼니 백엔드 개발자 채용</a></div>
-						<div class="list-group-conditions"><a href="#">지역 / 경력 / 학력</a></div>
-					</li> -->
 				</ul>
 			</div>
 			<div id="pagination">

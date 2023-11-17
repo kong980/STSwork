@@ -18,9 +18,12 @@ public class CrawlingDataDao {
 		return list;
 	}
 	
-	public int insertData(String companyName, String title, String condition, String upToDate, String siteUrl, CrawlingData data) {
+	public int insertData(String companyName, String title, String carrer, String background, String loc, String upToDate, String siteUrl, CrawlingData data) {
+		data.getCompanyName();
 		data.getTitle();
-		data.getCondition();
+		data.getCarrer();
+		data.getBackground();
+		data.getLoc();
 		data.getUpToDate();
 		data.getSiteUrl();
 		int result = dataInterface.insertData(data);

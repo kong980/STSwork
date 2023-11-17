@@ -31,8 +31,10 @@ public class CrawlingController {
 
 	@GetMapping("/job")
 	public String list(Model model) {
-//		service.getData();
-		// 얘는 그냥 DB에 있는 데이터만 조회해서 오는거야
+		// 크롤링 한 데이터 DB에 집어넣기
+		//	service.getData();
+
+		// DB에 있는 데이터 조회
 		ArrayList<CrawlingData> list = (ArrayList<CrawlingData>)dao.getDataAll();
 		model.addAttribute("jobs", list);
 		return "basic/job";
